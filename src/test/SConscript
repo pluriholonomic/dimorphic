@@ -1,0 +1,8 @@
+Import('env')
+
+env = env.Clone()
+
+env.Program("test_graph", ["test_graph.cxx", "../graph/graph.cxx"], 
+            LIBS=['blosc', 'graph'], LIBPATH=['..'] + env['CPPPATH'])
+env.Program("test_bcc_lattice", ["test_bcc_lattice.cxx"], 
+            LIBS=['blosc', 'graph'], LIBPATH=['..'] + env['CPPPATH'])
